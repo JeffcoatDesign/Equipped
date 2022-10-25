@@ -21,9 +21,9 @@ public class GameUI : MonoBehaviour
         goldText.text = "<b>Gold:</b> " + gold;
     }
 
-    public void SetInteractText (string interaction = "Interact")
+    public void SetInteractText (string interaction = "Interact", string obj = "Object")
     {
-        interactText.text = "Press [E] to " + interaction;
+        interactText.text = "Press [E] to " + interaction + " " + obj;
     }
     public void clearInteractText ()
     {

@@ -15,6 +15,7 @@ public class ItemPickup : Interactable
     {
         GameUI.instance.clearInteractText();
         Debug.Log("Picking up" + item.name);
+        Inventory.instance.Add(item);
         Destroy(gameObject);
     }
 }

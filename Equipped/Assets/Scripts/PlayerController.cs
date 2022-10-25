@@ -56,15 +56,7 @@ public class PlayerController : MonoBehaviourPun
         if (player.IsLocal)
         {
             me = this;
-            //photonView.RPC("SetSprite", RpcTarget.All, sr.transform.name, CustomizerManager.instance.skin.name);
-            //Debug.Log("Shirt Name: " + shirtSprite.name);
-            //Debug.Log("Pants Name: " + pantsSprite.name);
-            //Debug.Log("Shoe Name: " + shoeSprite.name);
-            //Debug.Log("Hair Name: " + hairSprite.name);
-            //photonView.RPC("SetShirt", RpcTarget.All, CustomizerManager.instance.shirt.name);
-            //photonView.RPC("SetPants", RpcTarget.All, CustomizerManager.instance.pants.name);
-            //photonView.RPC("SetShoe", RpcTarget.All, CustomizerManager.instance.shoe.name);
-            //photonView.RPC("SetHair", RpcTarget.All, CustomizerManager.instance.hair.name);
+            //set default appearance
         }
         else
             rig.isKinematic = true;
@@ -134,7 +126,7 @@ public class PlayerController : MonoBehaviourPun
         }
 
         newFocus.OnFocused(transform);
-        GameUI.instance.SetInteractText(newFocus.interactionVerb);
+        GameUI.instance.SetInteractText(newFocus.interactionVerb, newFocus.name);
     }
 
     void RemoveFocus()
@@ -234,28 +226,5 @@ public class PlayerController : MonoBehaviourPun
         GameUI.instance.UpdateGoldText(gold);
     }
 
-    [PunRPC]
-    void SetShirt (string spriteName)
-    {
-        GameObject sprite = (GameObject)Resources.Load(spriteName);
-        shirtSprite.sprite = sprite.GetComponent<Sprite>();
-    }
-    [PunRPC]
-    void SetPants(string spriteName)
-    {
-        GameObject sprite = (GameObject)Resources.Load(spriteName);
-        pantsSprite.sprite = sprite.GetComponent<Sprite>();
-    }
-    [PunRPC]
-    void SetHair(string spriteName)
-    {
-        GameObject sprite = (GameObject)Resources.Load(spriteName);
-        hairSprite.sprite = sprite.GetComponent<Sprite>();
-    }
-    [PunRPC]
-    void SetShoes(string spriteName)
-    {
-        GameObject sprite = (GameObject)Resources.Load(spriteName);
-        shoeSprite.sprite = sprite.GetComponent<Sprite>();
-    }
+        // Equip functions
 }
