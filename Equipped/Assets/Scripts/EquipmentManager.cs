@@ -34,7 +34,7 @@ public class EquipmentManager : MonoBehaviour
             GameManager.instance.localPlayer.armor -= currentEquipment[slotIndex].armorModifier;
             GameManager.instance.localPlayer.damageModifier -= currentEquipment[slotIndex].damageModifier;
         }
-        Debug.Log(slotIndex);
+        //Debug.Log(slotIndex);
         currentEquipment[slotIndex] = newItem;
         GameManager.instance.localPlayer.playerEquipment.photonView.RPC("SetSprite", RpcTarget.All, newItem.itemPath, slotIndex);
         GameManager.instance.localPlayer.armor += newItem.armorModifier;

@@ -22,7 +22,7 @@ public class Interactable : MonoBehaviourPun
     public virtual void setText()
     {
         //This is meant to be overwritten
-        GameUI.instance.SetInteractText("Press [" + interactKey.ToString() + "] " + interactionVerb);
+        GameUI.instance.SetInteractText("Press [" + interactKey.ToString() + "] to" + interactionVerb);
     }
 
     void Update()

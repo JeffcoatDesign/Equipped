@@ -27,11 +27,17 @@ public class EquipmentPickup : ItemPickup
         Equipment equipment = (Equipment)item;
         GameUI.instance.clearInteractText();
         EquipmentManager.instance.Equip(equipment);
-        PhotonNetwork.Destroy(gameObject);
+        photonView.RPC("Remove", photonView.Owner);
     }
 
     void SetSprite()
     {
         sr.sprite = item.sprite;
+    }
+    
+    [PunRPC]
+    void Remove ()
+    {
+        PhotonNetwork.Destroy(gameObject);
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class ItemPickup : Interactable
 {
@@ -27,8 +28,14 @@ public class ItemPickup : Interactable
     void PickUp ()
     {
         GameUI.instance.clearInteractText();
-        Debug.Log("Picking up " + item.name);
+        //Debug.Log("Picking up " + item.name);
         Inventory.instance.Add(item);
-        Destroy(gameObject);
+        photonView.RPC("Remove", photonView.Owner);
+    }
+
+    [PunRPC]
+    void Remove ()
+    {
+        PhotonNetwork.Destroy(gameObject);
     }
 }
