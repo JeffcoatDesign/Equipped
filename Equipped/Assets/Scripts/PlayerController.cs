@@ -29,13 +29,7 @@ public class PlayerController : MonoBehaviourPun
     public SpriteRenderer sr;
     public Animator weaponAnim;
     public HeaderInfo headerInfo;
-
-    [Header("Sprites")]
-    public Transform clothesContainer;
-    public SpriteRenderer shirtSprite;
-    public SpriteRenderer pantsSprite;
-    public SpriteRenderer shoeSprite;
-    public SpriteRenderer hairSprite;
+    public PlayerEquipment playerEquipment;
 
     [Header("Interaction")]
     public Interactable focusedInteract;
@@ -56,6 +50,7 @@ public class PlayerController : MonoBehaviourPun
         if (player.IsLocal)
         {
             me = this;
+            GameManager.instance.localPlayer = this;
             //set default appearance
         }
         else
@@ -68,6 +63,7 @@ public class PlayerController : MonoBehaviourPun
             return;
 
         CheckForInteractable();
+        TryCherry();
 
         Move();
 
@@ -105,7 +101,7 @@ public class PlayerController : MonoBehaviourPun
             RemoveFocus();
             return;
         }
-        Debug.Log(hit.collider.name);
+        //Debug.Log(hit.collider.name);
         Interactable interactable = hit.collider.GetComponent<Interactable>();
         if (interactable != null)
         {
@@ -126,7 +122,6 @@ public class PlayerController : MonoBehaviourPun
         }
 
         newFocus.OnFocused(transform);
-        GameUI.instance.SetInteractText(newFocus.interactionVerb, newFocus.name);
     }
 
     void RemoveFocus()
@@ -136,6 +131,15 @@ public class PlayerController : MonoBehaviourPun
 
         focusedInteract = null;
         GameUI.instance.clearInteractText();
+    }
+
+    void TryCherry ()
+    {
+        if (Inventory.instance.cherryCount > 0 && Input.GetKeyDown(KeyCode.F))
+        {
+            Inventory.instance.UseCherry();
+            photonView.RPC("Heal", photonPlayer, Inventory.instance.cherryItem.healAmount);
+        }
     }
 
     void Attack ()
@@ -225,6 +229,4 @@ public class PlayerController : MonoBehaviourPun
         //update ui
         GameUI.instance.UpdateGoldText(gold);
     }
-
-        // Equip functions
 }

@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviourPun
     public Transform[] spawnPoints;
     public float respawnTime;
 
+    public PlayerController localPlayer;
+
     private int playersInGame;
 
     //instance

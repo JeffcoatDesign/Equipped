@@ -8,6 +8,7 @@ public class GameUI : MonoBehaviour
 {
     public TextMeshProUGUI goldText;
     public TextMeshProUGUI interactText;
+    public TextMeshProUGUI cherryText;
 
     public static GameUI instance;
 
@@ -16,14 +17,24 @@ public class GameUI : MonoBehaviour
         instance = this;
     }
 
+    private void Start()
+    {
+        UpdateCherryText(Inventory.instance.cherryCount);
+    }
+
     public void UpdateGoldText (int gold)
     {
         goldText.text = "<b>Gold:</b> " + gold;
     }
 
-    public void SetInteractText (string interaction = "Interact", string obj = "Object")
+    public void UpdateCherryText (int cherries)
     {
-        interactText.text = "Press [E] to " + interaction + " " + obj;
+        cherryText.text = "" + cherries;
+    }
+
+    public void SetInteractText (string str)
+    {
+        interactText.text = str;
     }
     public void clearInteractText ()
     {

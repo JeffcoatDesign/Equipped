@@ -5,6 +5,8 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public List<Item> items = new List<Item>();
+    public int cherryCount;
+    public Cherry cherryItem;
 
     #region Singleton
     //instance
@@ -29,11 +31,25 @@ public class Inventory : MonoBehaviour
                 OnItemChangedCallback.Invoke();
         }
     }
+
     public void Remove (Item item)
     {
         items.Remove(item);
 
         if (OnItemChangedCallback != null)
             OnItemChangedCallback.Invoke();
+    }
+
+    public void AddCherry ()
+    {
+        cherryCount++;
+        //update game ui
+        GameUI.instance.UpdateCherryText(cherryCount);
+    }
+
+    public void UseCherry ()
+    {
+        cherryCount--;
+        GameUI.instance.UpdateCherryText(cherryCount);
     }
 }

@@ -1,6 +1,7 @@
 using UnityEngine;
+using Photon.Pun;
 
-public class Interactable : MonoBehaviour
+public class Interactable : MonoBehaviourPun
 {
     public KeyCode interactKey = KeyCode.E;
 
@@ -18,16 +19,23 @@ public class Interactable : MonoBehaviour
         Debug.Log("Interacting with: " + transform.name);
     }
 
+    public virtual void setText()
+    {
+        //This is meant to be overwritten
+        GameUI.instance.SetInteractText("Press [" + interactKey.ToString() + "] " + interactionVerb);
+    }
+
     void Update()
     {
         if (isFocused && !hasInteracted)
         {
+            setText();
             float distance = Vector2.Distance(player.position, transform.position);
             if (distance <= radius)
             {
                 if (Input.GetKeyDown(interactKey))
                 {
-                    Debug.Log("Interact");
+                    //Debug.Log("Interact");
                     Interact();
                     hasInteracted = true;
                 }
