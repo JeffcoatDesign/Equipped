@@ -31,10 +31,14 @@ public class EquipmentManager : MonoBehaviour
         if (currentEquipment[slotIndex] != null && !currentEquipment[slotIndex].isDefaultItem)
         {
             DropEquipment(currentEquipment[slotIndex]);
+            GameManager.instance.localPlayer.armor -= currentEquipment[slotIndex].armorModifier;
+            GameManager.instance.localPlayer.damageModifier -= currentEquipment[slotIndex].damageModifier;
         }
-
+        Debug.Log(slotIndex);
         currentEquipment[slotIndex] = newItem;
         GameManager.instance.localPlayer.playerEquipment.photonView.RPC("SetSprite", RpcTarget.All, newItem.itemPath, slotIndex);
+        GameManager.instance.localPlayer.armor += newItem.armorModifier;
+        GameManager.instance.localPlayer.damageModifier += newItem.damageModifier;
     }
 
     public void DropEquipment (Equipment cur)

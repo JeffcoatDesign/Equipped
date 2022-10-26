@@ -123,8 +123,10 @@ MonoBehaviour:
   curHp: 100
   maxHp: 100
   dead: 0
+  armor: 0
   interactionRadius: 1
   damage: 10
+  damageModifier: 0
   attackRange: 1
   attackRate: 0.2
   rig: {fileID: 7674553513236298486}

@@ -17,5 +17,5 @@ MonoBehaviour:
   isDefaultItem: 0
   itemPath: Items/Equipment/Shield_BBR_2
   equipSlot: 4
-  armorModifier: 1
+  armorModifier: 2
   damageModifier: 0

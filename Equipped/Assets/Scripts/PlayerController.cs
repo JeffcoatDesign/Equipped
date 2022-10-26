@@ -15,10 +15,12 @@ public class PlayerController : MonoBehaviourPun
     public int curHp;
     public int maxHp;
     public bool dead;
+    public int armor;
     public float interactionRadius;
 
     [Header("Attack")]
     public int damage;
+    public int damageModifier;
     public float attackRange;
     public float attackRate;
     private float lastAttackTime;
@@ -154,7 +156,7 @@ public class PlayerController : MonoBehaviourPun
         {
             //get the enemy and damage them
             Enemy enemy = hit.collider.GetComponent<Enemy>();
-            enemy.photonView.RPC("TakeDamage", RpcTarget.MasterClient, damage);
+            enemy.photonView.RPC("TakeDamage", RpcTarget.MasterClient, damage + damageModifier);
         }
 
         weaponAnim.SetTrigger("Attack");
@@ -163,7 +165,7 @@ public class PlayerController : MonoBehaviourPun
     [PunRPC]
     public void TakeDamage (int damage)
     {
-        curHp -= damage;
+        curHp -= Mathf.Clamp(damage - armor, 0, damage);
 
         //update healthbar
         headerInfo.photonView.RPC("UpdateHealthBar", RpcTarget.All, curHp);
