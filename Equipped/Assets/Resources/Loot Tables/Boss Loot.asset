@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cebde2fb2be26d4d977d92c18a53670, type: 3}
+  m_Name: Boss Loot
+  m_EditorClassIdentifier: 
+  treasures:
+  - {fileID: 11400000, guid: 8090afca92c40ce48b560cb86dc5287e, type: 2}
+  cherry: {fileID: 11400000, guid: 2302a280c25ef714897f97efca1a5178, type: 2}
+  treasurePath: TreasurePickup
+  cherryPath: CherryPickup
+  hats:
+  - {fileID: 11400000, guid: ceec5baf2435ac143ae16e21d8d445b7, type: 2}
+  armors:
+  - {fileID: 11400000, guid: 3fdc746ca5e73794e9a8c48b7d1c5d4b, type: 2}
+  pants:
+  - {fileID: 11400000, guid: e7b669e0b27c0054a9c0043961c63aac, type: 2}
+  - {fileID: 11400000, guid: e9dfdb34ec129b940902cdfb42ab14ee, type: 2}
+  - {fileID: 11400000, guid: 988a7a60503acdb41b9f89ab54a8af3c, type: 2}
+  - {fileID: 11400000, guid: ce0757406206fb04fbe1b8cc67569e05, type: 2}
+  - {fileID: 11400000, guid: 5af62e216d4aa5a4f9fec1a876931a91, type: 2}
+  - {fileID: 11400000, guid: 73418cf3c2b61ac4db3fd448e5b3f701, type: 2}
+  - {fileID: 11400000, guid: de5f203ec63269042b139e868208ac98, type: 2}
+  - {fileID: 11400000, guid: 7f7ece24cf2c9fa4392123184d964a7c, type: 2}
+  weapons:
+  - {fileID: 11400000, guid: d6e7416a86244e74683cee117e6e5669, type: 2}
+  shields:
+  - {fileID: 11400000, guid: c26ee60515d6e2d45952282f71064330, type: 2}
+  shoes:
+  - {fileID: 11400000, guid: 0b8be07198e95e74280f7776595c7f93, type: 2}
+  - {fileID: 11400000, guid: dae93019503ca2943b13bc497f3b70fc, type: 2}
+  - {fileID: 11400000, guid: 8ec35b3979eca164ca79f54a77beef23, type: 2}
+  - {fileID: 11400000, guid: 9c3fe0e741dc8774cb06d08c8ff56b67, type: 2}
+  hairs:
+  - {fileID: 11400000, guid: 386619fbd5c02b543a5753953945fb90, type: 2}
+  skins:
+  - {fileID: 11400000, guid: fc6fce32f4fa0cd4894d6b446c1a2b9c, type: 2}
+  - {fileID: 11400000, guid: 6351196bfcaa87849bf88b9e371e81a2, type: 2}
+  - {fileID: 11400000, guid: bfb7d48316da2f748987c382c07b5bd1, type: 2}
+  - {fileID: 11400000, guid: 36334ff5dc0c1e641b6da5fb295423fa, type: 2}
+  - {fileID: 11400000, guid: 0bcbf928d03c694488eb3ccebd5d1688, type: 2}
+  - {fileID: 11400000, guid: c623298966166714ea048121429c5345, type: 2}
+  - {fileID: 11400000, guid: d046ea012c796fb41ac09c50bb73bc59, type: 2}
+  - {fileID: 11400000, guid: 5c08ec7456d15e84d98763745df1b079, type: 2}
+  defHat: {fileID: 11400000, guid: 0da01c13494c2d04fa1fee7e7d71ad9e, type: 2}
+  defShield: {fileID: 11400000, guid: 2f37a933c11cf4b4299b26cf0a6579e6, type: 2}
+  hasHatChance: 100
+  hasShieldChance: 100
+  gearDropChance: 60
+  cherryChance: 0

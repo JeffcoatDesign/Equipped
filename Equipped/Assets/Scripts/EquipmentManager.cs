@@ -39,6 +39,8 @@ public class EquipmentManager : MonoBehaviour
         GameManager.instance.localPlayer.playerEquipment.photonView.RPC("SetSprite", RpcTarget.All, newItem.itemPath, slotIndex);
         GameManager.instance.localPlayer.armor += newItem.armorModifier;
         GameManager.instance.localPlayer.damageModifier += newItem.damageModifier;
+        GameUI.instance.UpdateArmorText(GameManager.instance.localPlayer.armor);
+        GameUI.instance.UpdateDamageText(GameManager.instance.localPlayer.damageModifier);
     }
 
     public void DropEquipment (Equipment cur)

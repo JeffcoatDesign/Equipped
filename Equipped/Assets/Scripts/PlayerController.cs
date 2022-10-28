@@ -54,6 +54,11 @@ public class PlayerController : MonoBehaviourPun
             me = this;
             GameManager.instance.localPlayer = this;
             //set default appearance
+            playerEquipment.photonView.RPC("SetSprite", RpcTarget.AllBuffered, CustomizerManager.instance.selections[1].itemPath, 1);
+            playerEquipment.photonView.RPC("SetSprite", RpcTarget.AllBuffered, CustomizerManager.instance.selections[2].itemPath, 2);
+            playerEquipment.photonView.RPC("SetSprite", RpcTarget.AllBuffered, CustomizerManager.instance.selections[5].itemPath, 5);
+            playerEquipment.photonView.RPC("SetSprite", RpcTarget.AllBuffered, CustomizerManager.instance.selections[6].itemPath, 6);
+            playerEquipment.photonView.RPC("SetSprite", RpcTarget.AllBuffered, CustomizerManager.instance.selections[7].itemPath, 7);
         }
         else
             rig.isKinematic = true;
@@ -225,7 +230,7 @@ public class PlayerController : MonoBehaviourPun
     }
 
     [PunRPC]
-    void GiveGold (int goldToGive)
+    public void GiveGold (int goldToGive)
     {
         gold += goldToGive;
         //update ui

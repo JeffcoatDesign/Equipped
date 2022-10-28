@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviourPun
 
     public int curHp;
     public int maxHp;
+    public int armor;
 
     public float chaseRange;
     public float attackRange;
@@ -21,10 +22,9 @@ public class Enemy : MonoBehaviourPun
     public float playerDetectRate = 0.2f;
     private float lastPlayerDetectTime;
 
-    public string objectToSpawnOnDeath;
-
     [Header("Attack")]
     public int damage;
+    public int damageModifier;
     public float attackRate;
     private float lastAttackTime;
 
@@ -32,10 +32,14 @@ public class Enemy : MonoBehaviourPun
     public HeaderInfo healthBar;
     public SpriteRenderer sr;
     public Rigidbody2D rig;
+    public EnemyEquipment enemyEquipment;
 
     void Start()
     {
         healthBar.Initialize(enemyName, maxHp);
+        if (!PhotonNetwork.IsMasterClient)
+            return;
+        enemyEquipment.PickEquipment();
     }
 
     void Update()
@@ -67,7 +71,7 @@ public class Enemy : MonoBehaviourPun
     void Attack()
     {
         lastAttackTime = Time.time;
-        targetPlayer.photonView.RPC("TakeDamage", targetPlayer.photonPlayer, damage);
+        targetPlayer.photonView.RPC("TakeDamage", targetPlayer.photonPlayer, damage + damageModifier);
     }
 
     //updates the targeted player
@@ -80,6 +84,8 @@ public class Enemy : MonoBehaviourPun
             //loop through all players
             foreach(PlayerController player in GameManager.instance.players)
             {
+                if (player == null)
+                    continue;
                 //calc the distance 
                 float dist = Vector2.Distance(transform.position, player.transform.position);
 
@@ -100,7 +106,7 @@ public class Enemy : MonoBehaviourPun
     [PunRPC]
     public void TakeDamage (int damage)
     {
-        curHp -= damage;
+        curHp -= Mathf.Clamp(damage - armor, 0, damage);
 
         healthBar.photonView.RPC("UpdateHealthBar", RpcTarget.All, curHp);
 
@@ -127,8 +133,7 @@ public class Enemy : MonoBehaviourPun
 
     void Die ()
     {
-        if (objectToSpawnOnDeath != string.Empty)
-            PhotonNetwork.Instantiate(objectToSpawnOnDeath, transform.position, Quaternion.identity);
+        enemyEquipment.DropRandomLoot();
 
         // destroy across network
         PhotonNetwork.Destroy(gameObject);

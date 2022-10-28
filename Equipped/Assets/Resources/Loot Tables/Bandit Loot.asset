@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cebde2fb2be26d4d977d92c18a53670, type: 3}
+  m_Name: Bandit Loot
+  m_EditorClassIdentifier: 
+  treasures:
+  - {fileID: 11400000, guid: 4c0794c92f295284fa8a1aff3f5ee5b3, type: 2}
+  cherry: {fileID: 11400000, guid: 2302a280c25ef714897f97efca1a5178, type: 2}
+  treasurePath: TreasurePickup
+  cherryPath: CherryPickup
+  hats:
+  - {fileID: 11400000, guid: 42e71d96e8c5b174fbb9026366aab167, type: 2}
+  - {fileID: 11400000, guid: 9239427a4306cf645a0b8b1b914583f2, type: 2}
+  armors:
+  - {fileID: 11400000, guid: b99940f163a967b48b73b4c87a81bc6e, type: 2}
+  - {fileID: 11400000, guid: 8f0043c22b4446f4f98bee4fbfac06b6, type: 2}
+  - {fileID: 11400000, guid: cf1b97502f5da1c4bac3d4f4fc916618, type: 2}
+  pants:
+  - {fileID: 11400000, guid: e7b669e0b27c0054a9c0043961c63aac, type: 2}
+  - {fileID: 11400000, guid: e9dfdb34ec129b940902cdfb42ab14ee, type: 2}
+  - {fileID: 11400000, guid: 988a7a60503acdb41b9f89ab54a8af3c, type: 2}
+  - {fileID: 11400000, guid: ce0757406206fb04fbe1b8cc67569e05, type: 2}
+  - {fileID: 11400000, guid: 5af62e216d4aa5a4f9fec1a876931a91, type: 2}
+  - {fileID: 11400000, guid: 73418cf3c2b61ac4db3fd448e5b3f701, type: 2}
+  - {fileID: 11400000, guid: de5f203ec63269042b139e868208ac98, type: 2}
+  - {fileID: 11400000, guid: 7f7ece24cf2c9fa4392123184d964a7c, type: 2}
+  weapons:
+  - {fileID: 11400000, guid: 9e126190e62369d449c4f6ce3b221ed0, type: 2}
+  - {fileID: 11400000, guid: 51d2fc130e2d3fc4e8ccee5104ca6f87, type: 2}
+  - {fileID: 11400000, guid: 7d90a4ac2da5caf4bac169730819141e, type: 2}
+  shields:
+  - {fileID: 11400000, guid: 1a647eda2c7147a46bd9c31c2672113a, type: 2}
+  - {fileID: 11400000, guid: 8c75da580d9054141b9f6f15f459da85, type: 2}
+  - {fileID: 11400000, guid: 3635c039d7df2ec44844d9f8cded1354, type: 2}
+  shoes:
+  - {fileID: 11400000, guid: 0b8be07198e95e74280f7776595c7f93, type: 2}
+  - {fileID: 11400000, guid: dae93019503ca2943b13bc497f3b70fc, type: 2}
+  - {fileID: 11400000, guid: 8ec35b3979eca164ca79f54a77beef23, type: 2}
+  - {fileID: 11400000, guid: 9c3fe0e741dc8774cb06d08c8ff56b67, type: 2}
+  hairs:
+  - {fileID: 11400000, guid: 386619fbd5c02b543a5753953945fb90, type: 2}
+  - {fileID: 11400000, guid: 735cc7cb1b031df498259851fe0ba2c7, type: 2}
+  - {fileID: 11400000, guid: 70f051f4f05d13c40bc82f85740da821, type: 2}
+  - {fileID: 11400000, guid: b41e3b0a6696911429dee33a992df36e, type: 2}
+  - {fileID: 11400000, guid: 30a83600872ea234f85cf2d213a3ff52, type: 2}
+  - {fileID: 11400000, guid: f88eea042d2f91f43a9587579ea2d5eb, type: 2}
+  - {fileID: 11400000, guid: 117e7e1b30a41f342895bc2f614f60a5, type: 2}
+  - {fileID: 11400000, guid: 7e31b0689ba080042a29b9087f8924e1, type: 2}
+  - {fileID: 11400000, guid: 66bd5714641e96b48b361564d99e5e7a, type: 2}
+  - {fileID: 11400000, guid: ca7c50284e78ba04fbe4e28a28f79cf8, type: 2}
+  - {fileID: 11400000, guid: ece035965281cce4ea57f624cdbe1dfa, type: 2}
+  - {fileID: 11400000, guid: 4750fe88e90c22a49975cf0350517105, type: 2}
+  - {fileID: 11400000, guid: c49ba97c7d25bd24b9c7a5b17aeecc40, type: 2}
+  - {fileID: 11400000, guid: 2d3759f06fb73994baa2dae8c25c9218, type: 2}
+  - {fileID: 11400000, guid: 80165c52c2d9731469fc3adb443e3e8a, type: 2}
+  - {fileID: 11400000, guid: 70f300bc086977944812dc0b55a90bea, type: 2}
+  - {fileID: 11400000, guid: afb927dc223a8a6429afb718b66d400a, type: 2}
+  - {fileID: 11400000, guid: ea497cff3e72cd44aa84e9e6bdd77f04, type: 2}
+  - {fileID: 11400000, guid: cb9da5286e8b4794caef150fe02cbf0d, type: 2}
+  - {fileID: 11400000, guid: f1333801436822845b5870aee439220b, type: 2}
+  - {fileID: 11400000, guid: 73d2776062349bd4da9170e54ffa4a60, type: 2}
+  - {fileID: 11400000, guid: 6c9a3290866586b4892e491d5200de81, type: 2}
+  - {fileID: 11400000, guid: 85a215f22cd97584b96af0fa8394619d, type: 2}
+  - {fileID: 11400000, guid: 3c51b4a23254fc448ba63a2721f5e924, type: 2}
+  - {fileID: 11400000, guid: eb6b46c81450aaa43aa4f9b7a3d14881, type: 2}
+  - {fileID: 11400000, guid: 00c1fe19401c75240a2c7b3b4766ba3c, type: 2}
+  - {fileID: 11400000, guid: b4e217cb7d3bc354988ab9b3f64722cf, type: 2}
+  - {fileID: 11400000, guid: ebbd233074b37114bb54f980d4d4c5fa, type: 2}
+  - {fileID: 11400000, guid: 428fe8f35c421694cb7631e626032d25, type: 2}
+  - {fileID: 11400000, guid: 75e7ecaee8926a54d95f17750f674640, type: 2}
+  - {fileID: 11400000, guid: 1ca2b2878c4fdc74cad95abc8b10ad43, type: 2}
+  - {fileID: 11400000, guid: ae025f11847539e468f367c72ebc777e, type: 2}
+  - {fileID: 11400000, guid: 9bd02dce13390d74ea65e88dff3bda4f, type: 2}
+  - {fileID: 11400000, guid: 21163e6fafb63d340b37d098f36bccfc, type: 2}
+  - {fileID: 11400000, guid: 96945167a5b2c1245aba975231587702, type: 2}
+  - {fileID: 11400000, guid: 2c38c9fb77bde0f49a18d1fb18415dcd, type: 2}
+  - {fileID: 11400000, guid: e867a0118ac2b2c4d98f239b010c527b, type: 2}
+  - {fileID: 11400000, guid: 468d32e6b533fdb4ab43e249ddf85558, type: 2}
+  - {fileID: 11400000, guid: dc09e2cf8b8d1b042bfc9940222458e0, type: 2}
+  - {fileID: 11400000, guid: 2d8cacfd449f6594ea1f5f7b25d04ffe, type: 2}
+  - {fileID: 11400000, guid: b031e90342c8c5c438633e9304527d40, type: 2}
+  - {fileID: 11400000, guid: edca4672f12816a48ab765377b9f41de, type: 2}
+  - {fileID: 11400000, guid: 0241eacd3a719254da8036928859ed62, type: 2}
+  - {fileID: 11400000, guid: 3821a68729305324e952ce62ce2f36ba, type: 2}
+  - {fileID: 11400000, guid: f7ac3e131f7abf2499599d2410e30497, type: 2}
+  - {fileID: 11400000, guid: 290dbe3b3cff1fc44adb9888eff33afa, type: 2}
+  - {fileID: 11400000, guid: a527c1ac36dae1843b17aaf6f5daf578, type: 2}
+  - {fileID: 11400000, guid: 6a7876b05e8bd4e489bfb3f1dc07b67d, type: 2}
+  - {fileID: 11400000, guid: ec4f049797b6e964ebf51a6fbeb0fb00, type: 2}
+  - {fileID: 11400000, guid: a0c37938e9100be489afb04f2585152f, type: 2}
+  - {fileID: 11400000, guid: 8c23dadd8112f364da39cf5df547e4d2, type: 2}
+  - {fileID: 11400000, guid: 269d655a8378229449e0063b31531375, type: 2}
+  - {fileID: 11400000, guid: 428e7623d28353c42887dfa7fcc94fc7, type: 2}
+  - {fileID: 11400000, guid: 38dd13f4de41c584d87ead29b5c00225, type: 2}
+  - {fileID: 11400000, guid: dce4eb31138cc324a8afc18397684df2, type: 2}
+  - {fileID: 11400000, guid: 304ccd1cb02635741b8e1cbbe33cb5a3, type: 2}
+  - {fileID: 11400000, guid: 8d1276c38347b99459742084ca4c1490, type: 2}
+  - {fileID: 11400000, guid: 9485e40d86b42ed4696e4e2f0a061c4e, type: 2}
+  - {fileID: 11400000, guid: e3eaa3a99c8039e439baaf77a98982c4, type: 2}
+  - {fileID: 11400000, guid: a0868a2f47acb77439e0441b56b25505, type: 2}
+  - {fileID: 11400000, guid: d09f0f63e15afd84685741a764c62059, type: 2}
+  skins:
+  - {fileID: 11400000, guid: bfb7d48316da2f748987c382c07b5bd1, type: 2}
+  - {fileID: 11400000, guid: 36334ff5dc0c1e641b6da5fb295423fa, type: 2}
+  - {fileID: 11400000, guid: 0bcbf928d03c694488eb3ccebd5d1688, type: 2}
+  - {fileID: 11400000, guid: c623298966166714ea048121429c5345, type: 2}
+  - {fileID: 11400000, guid: d046ea012c796fb41ac09c50bb73bc59, type: 2}
+  - {fileID: 11400000, guid: 5c08ec7456d15e84d98763745df1b079, type: 2}
+  defHat: {fileID: 11400000, guid: 0da01c13494c2d04fa1fee7e7d71ad9e, type: 2}
+  defShield: {fileID: 11400000, guid: 2f37a933c11cf4b4299b26cf0a6579e6, type: 2}
+  hasHatChance: 20
+  hasShieldChance: 20
+  gearDropChance: 30
+  cherryChance: 30

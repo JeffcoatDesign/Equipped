@@ -5,6 +5,8 @@ using Photon.Pun;
 
 public class EquipmentPickup : ItemPickup
 {
+    private float despawnTime = 20.0f;
+
     public override void Interact()
     {
         Equip();
@@ -18,6 +20,7 @@ public class EquipmentPickup : ItemPickup
             string path = data[0].ToString();
             //Debug.Log(path);
             item = Resources.Load<Item>(path);
+            Invoke("Despawn", despawnTime);
         }
         SetSprite();
     }
@@ -33,6 +36,11 @@ public class EquipmentPickup : ItemPickup
     void SetSprite()
     {
         sr.sprite = item.sprite;
+    }
+
+    void Despawn()
+    {
+        photonView.RPC("Remove", photonView.Owner);
     }
     
     [PunRPC]

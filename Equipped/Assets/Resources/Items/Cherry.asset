@@ -16,4 +16,4 @@ MonoBehaviour:
   sprite: {fileID: 1976625865, guid: c5ef7e02b123f7149a4692468986ca4c, type: 3}
   isDefaultItem: 1
   itemPath: Items/Cherry
-  healAmount: 20
+  healAmount: 40
