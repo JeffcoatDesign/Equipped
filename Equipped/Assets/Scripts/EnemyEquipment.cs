@@ -42,7 +42,7 @@ public class EnemyEquipment : MonoBehaviourPun
         }
         //Debug.Log(slotIndex);
         currentEquipment[slotIndex] = newItem;
-        photonView.RPC("SetSprite", RpcTarget.All, newItem.itemPath, slotIndex);
+        photonView.RPC("SetSprite", RpcTarget.AllBuffered, newItem.itemPath, slotIndex);
         enemy.armor += newItem.armorModifier;
         enemy.damageModifier += newItem.damageModifier;
     }
